@@ -40,7 +40,7 @@ function randomlySelectBeer( beerArray ){
     randomBeer = beer[beerType][randomBeerIndex];
     showModal();
     populateBeerInfo(randomBeer.name,randomBeer.price,randomBeer.abv,randomBeer.image_url);
-    console.log(randomBeer);
+    console.log('this is the random beer object',randomBeer);
     findingDescription(randomBeer.brewer, randomBeer.type);
     youtubeAPI(randomBeer.name);
     placesAPI();
@@ -51,6 +51,29 @@ function populateBeerInfo(name, price, abv, img){
     $('#price').text(price);
     $('#abv').text(abv);
     $('.beerImage').css('background-image', `url("${img}")`);
+
+    ///testing error handling on image
+    getMeta(img);
+
+    
+}
+
+function getMeta(url){   
+    
+    var img = new Image();
+    img.onload = function(){
+        console.log('THIS IS THE HEIGHT OF THE IMAGE!!', this.height);
+        
+    };
+    img.src = url;
+    if(!img.onload){
+        console.log('DIDNT WORK??')
+    }
+    else{
+        console.log('WORKED??')
+    }
+    
+    
 }
 
 //** Modal Funcationality
@@ -119,7 +142,7 @@ function youtubeAPI(name){
     };
 
     function getData(responseData){
-        console.log("Youtube Response Data: ",responseData)
+        // console.log("Youtube Response Data: ",responseData)
         var video = null;
         if(responseData.items.length === 0){
             video = "qFJFoH6zk5I";
@@ -130,7 +153,7 @@ function youtubeAPI(name){
         playExactVideo(video);
     }
     $.ajax(youtubeAjaxObject);
-    console.log(youtubeAjaxObject);
+    // console.log(youtubeAjaxObject);
 }
 
 function playExactVideo(vidID){
@@ -321,9 +344,9 @@ function placesAPI(){
             var latCoord = null;
             var lngCoord = null;
             var placesAPIData = response;
-            console.log("Success happened ", placesAPIData);
-            console.log(randomBeer.brewer);
-            console.log(randomBeer.country);
+            // console.log("Success happened ", placesAPIData);
+            // console.log(randomBeer.brewer);
+            // console.log(randomBeer.country);
             if (response.status === "ZERO_RESULTS"){
                 if(randomBeer.country === "Canada"){
                     latCoord = 45.425507;
@@ -344,8 +367,8 @@ function placesAPI(){
             }
             latCoord = response.candidates[0].geometry.location.lat;
             lngCoord =  response.candidates[0].geometry.location.lng;
-            console.log("latitude: "+ latCoord);
-            console.log("longtitude: "+ lngCoord);
+            // console.log("latitude: "+ latCoord);
+            // console.log("longtitude: "+ lngCoord);
             initMap(latCoord, lngCoord);
         },
     };
@@ -354,8 +377,8 @@ function placesAPI(){
 
 function displayContent(media) {
     var tabcontent, tablinks;
-    console.log("this gets called")
-    console.log("this is the event", event.currentTarget)
+    // console.log("this gets called")
+    // console.log("this is the event", event.currentTarget)
     tabcontent = document.getElementsByClassName("tabcontent");
     for (var i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = "none";
