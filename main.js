@@ -157,7 +157,7 @@ function youtubeAPI(name){
 }
 
 function playExactVideo(vidID){
-    $('#player').attr('src','http://www.youtube.com/embed/' + vidID);
+    $('#player').attr('src','https://www.youtube.com/embed/' + vidID);
 }
 
 function initMap(lati, longi) {
