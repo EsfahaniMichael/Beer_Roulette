@@ -22,7 +22,7 @@
 }
 .border{
     position: relative;
-    transform: translateY(116%);
+    transform: translateY(25%);
     z-index: -1;
     height: 10px;
     width: 10px;
@@ -43,21 +43,21 @@
 .checkbox{
     font-family: 'Rock Salt', cursive;
     font-size: 2.3em;
-    text-align: center;
+    margin-left: 5%;
 }
 .checkbox:hover{
     color: darkgoldenrod;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 #beerSelector{
+    
     display: flex;
     position: relative;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-flow: row wrap;
     width: 35%;
     height: 30%;
     margin: 0 auto;
-    top: 13%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -287,7 +287,7 @@
     background-color: whitesmoke;
     border: 4px solid rgb(187, 168, 59);
     height: 27%;
-    width: 46%;
+    width: 20%;
     margin: 0 auto;
     background-position: center;
     background-size: cover;
@@ -340,10 +340,7 @@
 
 
 @media only screen and (max-width: 1080px) {
-    #randomize {
-      width: 70%;
-      height: 70%;
-    }
+    
     .checkbox{
         font-size: 1.5em;
     }
@@ -416,21 +413,13 @@
 }
 
 
-@media only screen and (max-width: 635px) {
-    #non-alc-container{
-        position: relative;
-        right: 27.3%;
-    }
-}
+
 @media only screen and (max-width: 414px){
     .border{
         position: relative;
         top: 4%;
     }
-    #non-alc-container{
-        position: relative;
-        right: 13.5%;
-    }
+
     .youtubeDiv{
         right: 5.3%;
         bottom: 2%;
@@ -443,10 +432,7 @@
 }
 
 @media only screen and (max-width: 375px) {
-    #non-alc-container{
-        position: relative;
-        right: 19%;
-    }
+
     .beerImage{
         width: 60%;
     }
@@ -481,10 +467,7 @@
    .checkbox{
        font-size: 1em;
    }
-   #non-alc-container{
-       position: relative;
-       right: 14%;
-   }
+
    .youtubeDiv{
     right: 6.5%;
     bottom: 2.3%;
@@ -499,3 +482,39 @@
 
 
 }
+
+@media screen and (orientation: portrait) {
+    #beerSelector{
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        transform: translateY(5%);
+        justify-content: flex-start;
+        flex-flow: row wrap;
+        width: 38%;
+    }
+    .roulette{
+        height: 220px;
+    }
+    
+        
+}
+@media screen and (min-width: 321px) and (max-width: 1000px) and (orientation: landscape){
+    #beerSelector{
+        transform: translateY(6%); 
+    }
+}
+@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) { 
+    .checkbox{
+        
+        font-size: 1.3em;
+    }
+    .roulette{
+        height: 222px;
+    }
+    #beerSelector{
+        transform: translateY(10%); 
+    }
+    
+}
+    
