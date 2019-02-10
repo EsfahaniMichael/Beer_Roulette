@@ -23,6 +23,8 @@ function clickHandlers(){
 }
 
 function beerSelectorCheckbox(event){
+    $('.insideBeerImage').css("display", "block");
+    $('.insideBeerImageBelow').css("display", "none");
     event.preventDefault();
     var beerSelected=[];
     $("input:checked").each(function(index, element) {
@@ -50,31 +52,24 @@ function populateBeerInfo(name, price, abv, img){
     $('#name').text(name);
     $('#price').text(price);
     $('#abv').text(abv);
-    $('.beerImage').css('background-image', `url("${img}")`);
+    $('.insideBeerImage').attr("src", `${img}`);
+    
+    
 
-    ///testing error handling on image
-    getMeta(img);
-
+    //  $('.beerImage').error(function() {
+    //     alert( "Handler for .error() called." )
+    //    })
     
 }
 
-function getMeta(url){   
+function errorFunction(){
     
-    var img = new Image();
-    img.onload = function(){
-        console.log('THIS IS THE HEIGHT OF THE IMAGE!!', this.height);
-        
-    };
-    img.src = url;
-    if(!img.onload){
-        console.log('DIDNT WORK??')
-    }
-    else{
-        console.log('WORKED??')
-    }
-    
-    
-}
+    $('.insideBeerImage').css("display", "none");
+    $('.insideBeerImageBelow').css("display", "block");
+    console.log('did it WORK???????')
+};
+
+
 
 //** Modal Funcationality
 
@@ -247,7 +242,7 @@ function initMap(lati, longi) {
         ]
     });
     var icon = {
-        url: 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/256/beer-icon.png',
+        url: 'https://icons.iconarchive.com/icons/paomedia/small-n-flat/256/beer-icon.png',
         scaledSize: new google.maps.Size(60,60)
     };
     var marker = new google.maps.Marker({
@@ -336,7 +331,7 @@ function placesAPI(){
     };
     var placesAPIinput = {
     dataType: "json",
-    url: "http://localhost:8888/c918_hackathon2/proxies/googleplaces.php",
+    url: "https://localhost:8888/c918_hackathon2/proxies/googleplaces.php",
     method: "GET",
     error: err => console.log(err),
     data: theData,
