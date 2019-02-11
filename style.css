@@ -167,6 +167,7 @@
 }
 
 .containerWiki{
+    background-color: rgba(0, 0, 0, 0.6);
     overflow: auto;
     font-size: 2.2vmin;
     color: white;
