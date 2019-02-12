@@ -53,12 +53,7 @@ function populateBeerInfo(name, price, abv, img){
     $('#price').text(price);
     $('#abv').text(abv);
     $('.insideBeerImage').attr("src", `${img}`);
-    
-    
-
-    //  $('.beerImage').error(function() {
-    //     alert( "Handler for .error() called." )
-    //    })
+   
     
 }
 
@@ -331,15 +326,16 @@ function placesAPI(){
     };
     var placesAPIinput = {
     dataType: "json",
-    url: "https://localhost:8888/c918_hackathon2/proxies/googleplaces.php",
+    url: "proxies/googleplaces.php",
     method: "GET",
-    error: err => console.log(err),
+    error: err => console.log('HI!!!!',err),
     data: theData,
         success: function(response){
+            console.log("WTF!!!")
             var latCoord = null;
             var lngCoord = null;
             var placesAPIData = response;
-            // console.log("Success happened ", placesAPIData);
+             console.log("Success happened ", placesAPIData);
             // console.log(randomBeer.brewer);
             // console.log(randomBeer.country);
             if (response.status === "ZERO_RESULTS"){
