@@ -191,9 +191,7 @@
     top: 3%;
     width: 100%;
 }
-.portraitMap{
-    display:inline-block;
-}
+
 .youtubeDiv{
     position: relative;
     vertical-align: top;
@@ -504,7 +502,7 @@
     .insideBeerImageBelow{
         width:55%;
     }
-    .portraitMap{
+    #googleMap{
         display:none;
     }
         
