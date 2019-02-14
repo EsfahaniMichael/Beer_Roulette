@@ -191,7 +191,9 @@
     top: 3%;
     width: 100%;
 }
-
+.portraitMap{
+    display:inline-block;
+}
 .youtubeDiv{
     position: relative;
     vertical-align: top;
@@ -502,7 +504,9 @@
     .insideBeerImageBelow{
         width:55%;
     }
-    
+    .portraitMap{
+        display:none;
+    }
         
 }
 @media screen and (min-width: 321px) and (max-width: 1000px) and (orientation: landscape){

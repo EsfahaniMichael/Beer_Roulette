@@ -151,7 +151,7 @@ function playExactVideo(vidID){
 }
 
 function initMap(lati, longi) {
-    // making the map night mode
+    
     var maps = new google.maps.Map(document.getElementById('googleMap'), {
         center: {lat: lati, lng: longi},
         zoom: 12,
