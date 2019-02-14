@@ -407,7 +407,6 @@
 
     }
     #googleMap{
-    display: block;
     width: 90.5%;
     height: 56%;
     }
@@ -496,6 +495,12 @@
     }
     .roulette{
         height: 220px;
+    }
+    .insideBeerImage{
+        width:55%;
+    }
+    .insideBeerImageBelow{
+        width:55%;
     }
     
         
