@@ -355,6 +355,9 @@
     }
 }
 @media only screen and (max-width: 740px){
+    #googleMap{
+        display:none;
+    }
     .beerImage{
         width: 40%;
     }
